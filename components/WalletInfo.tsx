@@ -52,16 +52,14 @@ export default function WalletInfo({
             </span>
           </>
         );
-      } else {
-        return name;
       }
-    } else {
-      return shortenAddress(
-        address ? getAddress(address) : ethers.constants.AddressZero,
-        4
-      );
+      return name;
     }
-  }, [address, ensNameResp, size]);
+    return shortenAddress(
+      address ? getAddress(address) : ethers.constants.AddressZero,
+      4
+    );
+  }, [ensNameResp, address, disableEns, size]);
 
   return (
     <div className="flex flex-row gap-2 items-center">
